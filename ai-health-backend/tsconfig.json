@@ -1,0 +1,40 @@
+{
+  // Sets compiler options for a modern Node.js project using ES Modules (import/export syntax)
+  "compilerOptions": {
+    // === Project Setup & Modules ===
+    "target": "ES2022",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    
+    // --> ADD THIS LINE <--
+    "allowImportingTsExtensions": true,
+    "noEmit": true,
+    
+    // --> MAKE SURE THIS IS TRUE for personality.json <--
+    "resolveJsonModule": true,
+    
+    "rootDir": "./src",
+    "esModuleInterop": true, 
+
+    // === Type Checking & Strictness ===
+    "strict": true,
+    "verbatimModuleSyntax": true,
+    "isolatedModules": true, 
+    "noUncheckedIndexedAccess": true,
+    "noUncheckedSideEffectImports": true,
+    "moduleDetection": "force",
+
+    // === Output & Utility ===
+    "outDir": "./dist",
+    "skipLibCheck": true,
+    "sourceMap": true,
+    "declaration": true,
+    "declarationMap": true,
+
+    // === Environment ===
+    "lib": ["es2022"],
+    "types": ["node"]
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules"]
+}

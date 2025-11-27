@@ -1,0 +1,38 @@
+{
+  "name": "ai-health-backend",
+  "version": "1.0.0",
+  "description": "AI Health Application Backend with DeepSeek and Gemini Orchestration",
+  "main": "src/index.ts",
+  "type": "module",
+"scripts": {
+    "start": "node --loader ts-node/esm src/index.ts",
+    "dev": "nodemon --exec 'node --loader ts-node/esm' src/index.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "ai",
+    "health",
+    "typescript",
+    "nodejs",
+    "prisma"
+  ],
+  "author": "Pavan",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/cors": "^2.8.19",
+    "@types/express": "^4.17.21",
+    "@types/node": "^20.14.9",
+    "nodemon": "^3.1.4",
+    "prisma": "^5.22.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.5.3"
+  },
+  "dependencies": {
+    "@google/generative-ai": "^0.15.0",
+    "@prisma/client": "^5.22.0",
+    "axios": "^1.7.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2"
+  }
+}

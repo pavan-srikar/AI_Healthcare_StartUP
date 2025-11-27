@@ -1,0 +1,37 @@
+// Defines the database schema for Users, Memories, and Chat Logs
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        String   @id @default(uuid())
+  createdAt DateTime @default(now())
+  
+  // Long-term memory: Stores "High AQI", "Rash on foot", "Vegan"
+  facts     Fact[]   
+  
+  // Chat history
+  messages  Message[]
+}
+
+model Fact {
+  id        String   @id @default(uuid())
+  content   String   // e.g., "User lives in high AQI area"
+  userId    String
+  user      User     @relation(fields: [userId], references: [id])
+  createdAt DateTime @default(now())
+}
+
+model Message {
+  id        String   @id @default(uuid())
+  role      String   // "user" or "assistant"
+  content   String
+  userId    String
+  user      User     @relation(fields: [userId], references: [id])
+  createdAt DateTime @default(now())
+}
